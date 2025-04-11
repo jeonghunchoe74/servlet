@@ -11,8 +11,6 @@ import javax.servlet.annotation.WebFilter;
 
 @WebFilter("/*")
 public class CharacterEncodingFilter implements Filter {
-
-	// 주석으로 내용 추가
 	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)

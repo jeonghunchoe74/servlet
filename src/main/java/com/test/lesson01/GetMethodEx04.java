@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet ("/lesson01/ex04")
 public class GetMethodEx04 extends HttpServlet{
+	// 임시 추가 내용
+	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html");
