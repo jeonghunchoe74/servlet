@@ -42,16 +42,27 @@
 				    list.add(map);
 				    map = new HashMap<String, Object>() {{ put("name", "반올림피자"); put("menu", "피자"); put("point", 4.3); } };
 				    list.add(map);
+				    
+				    String keyword = request.getParameter("keyword");
+				    String pointFilter = request.getParameter("pointFilter");
+				    boolean exclude = pointFilter != null;
 				    for (int i = 0; i < list.size(); i++){
 				    	Map<String, Object> data = list.get(i);
-
+				    	if (keyword.equals(data.get("menu"))){
+				    		if (exclude && (double) data.get("point") <= 4.0){
+				    			continue;
+				    		}
+				    	
+				    	
 				%>
+				
 				<tr>
 					<td><%= data.get("menu") %></td>
 					<td><%= data.get("name") %></td>
 					<td><%= data.get("point") %></td>
 				</tr>
 				<%
+				    	}				
 				    }
 				%>
 			</tbody>
